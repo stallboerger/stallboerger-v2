@@ -37,13 +37,6 @@ export const metadata: Metadata = {
 			description: 'Software Designer',
 			url: `https://stallboerger.com`,
 		siteName: 'Anton Stallbörger',
-		images: [
-			{
-				url: `https://antonstallboerger.com/og.jpg`,
-				width: 1790,
-				height: 1008,
-			},
-		],
 		locale: 'en-US',
 		type: 'website',
 	},
@@ -63,17 +56,6 @@ export const metadata: Metadata = {
 		card: 'summary_large_image',
 		description: 'Software Designer',
 		creator: '@stallboerger',
-		images: [
-			{
-				url: `https://antonstallboerger.com/og.jpg`,
-				width: 1790,
-				height: 1008,
-			},
-		],
-	},
-	icons: {
-		icon: `https://antonstallboerger.com/favicon.ico`,
-		apple: '/apple-icon.png',
 	},
 	verification: {
 		google: 'stqJtLv8IK8j4XXD3FJI8PnEPdMd2Kb-BLJJusaZuuA',
