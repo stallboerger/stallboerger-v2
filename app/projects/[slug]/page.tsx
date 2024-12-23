@@ -4,8 +4,6 @@ import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import styles from '../../../styles/views/project.module.css';
-
 export const generateStaticParams = async () => allProjects.map((project: any) => ({ slug: project._raw.flattenedPath }))
 
 export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -20,23 +18,23 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
 
   if (project) {
     return (<>
-      <header className={styles.header}>
-        <h1 className={styles.title}>{project?.title}</h1>
-        <time className={styles.year} dateTime={project?.year} >
+      <header className='col-span-full md:col-span-12 lg:col-span-4 mb-8'>
+        <h1>{project?.title}</h1>
+        <time dateTime={project?.year} >
           {format(parseISO(project.year), 'yyyy')}
         </time>
-        <p className={styles.description}>{project?.description}</p>
+        <p className='mt-4'>{project?.description}</p>
       </header>
 
-      <aside className={styles.meta}>
+      <aside className='col-span-full md:col-span-8 lg:col-span-4 mb-20'>
         {project.links && 
-          <div className={styles.links}>
-            <h2 className={styles.title}>Visit live</h2>
+          <div className='mb-8'>
+            <h2 className='mb-0'>Visit live</h2>
             {project.links.map((url, key) => (
               <Link
               href={url.url}
               target='_blank'
-              className={styles.url}
+              className='block'
               key={key}
               >{url.title}</Link>
             ))}
@@ -44,13 +42,13 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
         }
 
         {project.collaborators && (
-          <div className={styles.collaborators}>
-            <h2 className={styles.title}>Collaborators</h2>
+          <div className='flex flex-col gap-2 mt-2'>
+            <h2 className='mb-1'>Collaborators</h2>
             {project.collaborators?.map((collaborator, key) => (
               <Link 
                 href={collaborator.url}
                 target="_blank"
-                className={styles.collaborator}
+                className='flex gap-2'
                 key={key}
               >
                 <Image 
@@ -58,7 +56,7 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
                   alt={collaborator.name}
                   width={240}
                   height={240}
-                  className={styles.avatar} 
+                  className='w-6 h-6 rounded-full shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)]' 
                 />
                 {collaborator.name}
               </Link>
@@ -67,7 +65,7 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
         )}
       </aside>
 
-      <section className={styles.content}>
+      <section className='col-span-full md:col-span-12 md:col-start-1 lg:col-start-9 lg:col-span-6 [&_p+*]:mt-8 [&_p+p]:mt-4 [&_p+h2]:mt-16'>
         <Mdx code={project.body.code} />
       </section>
     </>)
