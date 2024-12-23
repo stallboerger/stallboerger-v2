@@ -28,11 +28,12 @@ const Card: React.FC<Props> = ({
       <div className="bg-white dark:bg-black shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] overflow-hidden mb-8">
         <Link href={link}>
           <Image
+            src={imageSrc}
             alt={imageAlt}
             className="select-none"
-            src={imageSrc}
-            width={4000}
-            height={4000}
+            width={1500}
+            height={1500}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             priority
           />
         </Link>
