@@ -33,7 +33,7 @@ const Card: React.FC<Props> = ({
             className="select-none"
             width={1080}
             height={1080}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1080px) 50vw, 50vw"
             priority
           />
         </Link>
