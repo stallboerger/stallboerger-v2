@@ -1,8 +1,10 @@
+import { NextConfig } from "next";
+
 /** @type {import('next').NextConfig} */
 const { withContentlayer } = require('next-contentlayer2');
 const path = require('path')
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   sassOptions: {
     includedPaths: [path.join(__dirname, 'styles')]
   },
@@ -12,6 +14,15 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "**",
 			}
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/',
+        permanent: true
+      }
     ]
   }
 }
