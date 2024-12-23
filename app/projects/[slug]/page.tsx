@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export const generateStaticParams = async () => allProjects.map((project: any) => ({ slug: project._raw.flattenedPath }))
+export const generateStaticParams = async () => allProjects.map((project: any) => ({ slug: project.slug }))
 
 export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;

@@ -4,11 +4,11 @@ import { Mdx } from 'components/mdx'
 
 import styles from '../../../styles/views/thought.module.css'
 
-export const generateStaticParams = async () => allThoughts.map((thought) => ({ slug: thought._raw.flattenedPath }))
+export const generateStaticParams = async () => allThoughts.map((thought) => ({ slug: thought.slug }))
 
 export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  const thought = allThoughts.find((thought) => thought._raw.flattenedPath === 'thoughts/' + slug)
+  const thought = allThoughts.find((thought) => thought.slug === slug)
   return { title: thought?.title }
 }
 

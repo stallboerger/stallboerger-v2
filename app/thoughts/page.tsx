@@ -30,7 +30,7 @@ export default function ThoughtsPage() {
 				id={post.slug}
 				key={key}
 				className={styles.thought}
-				href={{ pathname: `/thoughts/${post.slug}` }}
+				href={`/thoughts/${post.slug}`}
 			>
 				<Image 
 					src={`/images/thoughts/${post.image}`}

@@ -38,6 +38,10 @@ const Thought = defineDocumentType(() => ({
             type: "string",
             resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, ""),
         },
+        url: {
+            type: "string",
+            resolve: (doc) => doc._raw.flattenedPath
+        }
     }
 }))
 
@@ -110,8 +114,12 @@ const Project = defineDocumentType(() => ({
     },
     computedFields: {
         slug: {
-            type: 'string',
-            resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, "")
+            type: "string",
+            resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, ""),
+        },
+        url: {
+            type: "string",
+            resolve: (doc) => doc._raw.flattenedPath
         }
     }
 }))
