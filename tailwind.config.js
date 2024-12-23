@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
+import plugin from 'tailwindcss/plugin'
+
+const variants = plugin(({ addVariant }) => {
+  addVariant('not-first', '&:not(:first-child)')
+  addVariant('not-last', '&:not(:last-child)')
+})
+
 module.exports = {
   content: [
     './content/**/*.mdx',
@@ -53,5 +60,8 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    variants,
+    require('@tailwindcss/typography')
+  ],
 }
