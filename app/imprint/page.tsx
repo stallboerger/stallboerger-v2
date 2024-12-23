@@ -1,7 +1,4 @@
 import type { Metadata } from 'next';
-
-import styles from '../../styles/views/imprint.module.css'
-
 export const metadata: Metadata = {
   title: 'Imprint'
 };
@@ -9,11 +6,11 @@ export const metadata: Metadata = {
 export default function ImprintPage() {
   return (
     <>
-      <header className={styles.header}>
+      <header className='col-span-full lg:col-span-8 md:col-span-12 lg:top-8 sticky lg:self-start mb-24'>
         <h1>Imprint</h1>
-        <p>Last updated Nov 18, 2024</p>
+        <p>Last updated Dec 21, 2024</p>
       </header>
-      <section className={styles.content}>
+      <section className='col-span-full md:col-span-12 lg:col-span-6'>
         <h2>Information according to German §5 of TMG</h2>
         <p>
           Anton Stallbörger
@@ -22,7 +19,7 @@ export default function ImprintPage() {
           <br />
           70192 Stuttgart, Germany
           <br />
-          <a className={styles.link} href="mailto:hi@antonstallboerger.com" >hi@antonstallboerger.com</a>
+          <a href="mailto:anton@stallboerger.de">anton@stallboerger.de</a>
         </p>
         <h2>Copyright</h2>
         <p>

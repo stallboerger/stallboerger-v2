@@ -7,7 +7,7 @@ import Swup from 'swup'
 import SwupHeadPlugin from '@swup/head-plugin'
 import SwupScrollPlugin from '@swup/scroll-plugin'
 
-import styles from '../styles/components/navbar.module.css'
+import clsx from 'clsx'
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
@@ -35,22 +35,39 @@ export default function Navbar() {
     })
   }, [])
 
+  const items = [
+    {
+      title: 'About',
+      href: '/about',
+    },
+    {
+      title: 'Thoughts',
+      href: '/thoughts',
+    },
+    {
+      title: 'Playground',
+      href: '/playground',
+    }
+  ]
+
   return (
-    <nav className={styles.navbar}>
-      <Link href='/' className={`${styles.home} ${styles.link} ${currentRoute === "/" && styles.active}`}>
+    <nav className='grid-cols-16 grid gap-4 lg:gap-8 justify-between items-center w-full h-[53px] z-50 px-4 lg:px-8 bg-sand-1 dark:bg-sand-dark-1 select-none'>
+      <Link href='/' className={clsx(
+        'col-span-3',
+        'text-sand-11 dark:text-sand-dark-11 no-underline',
+        currentRoute === '/' && 'text-sand-12 dark:text-sand-dark-12',
+      )}>
         Home
       </Link>
 
-      <div className={styles.pages}>
-        <Link href='/about' className={`${styles.link} ${currentRoute === "/about" && styles.active}`}>
-          About
-        </Link>
-        <Link href='/thoughts' className={`${styles.link} ${currentRoute === "/thoughts" && styles.active}`}>
-          Thoughts
-        </Link>
-        <Link href='/playground' className={`${styles.link} ${currentRoute === "/playground" && styles.active}`}>
-          Playground
-        </Link>
+      <div className='flex gap-3 md:gap-6 md:col-span-5 col-start-[16] justify-self-end md:justify-self-start md:col-start-9'>
+        {items.map((item) => (
+          <Link key={item.title} href={item.href} className={clsx(
+            'text-sand-11 dark:text-sand-dark-11 no-underline',
+            item.href === '/' && 'col-span-3',
+            currentRoute === item.href && 'text-sand-12 dark:text-sand-dark-12',
+          )}>{item.title}</Link>
+        ))}
       </div>
     </nav>
   );
