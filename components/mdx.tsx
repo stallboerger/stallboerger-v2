@@ -1,10 +1,6 @@
 import * as React from 'react'
-import NextImage from 'next/image'
+import Image from '@/components/image'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
-
-function Image(props: any) {
-  return <NextImage alt={props.alt} {...props} />;
-}
 
 const components = {
   Image
