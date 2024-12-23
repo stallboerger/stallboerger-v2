@@ -31,8 +31,8 @@ const Card: React.FC<Props> = ({
             src={imageSrc}
             alt={imageAlt}
             className="select-none"
-            width={1500}
-            height={1500}
+            width={1080}
+            height={1080}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             priority
           />
