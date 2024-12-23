@@ -45,6 +45,7 @@ const Card: React.FC<Props> = ({
         <Link 
           href={link}
           className="col-span-full lg:col-span-2 lg:justify-self-end"
+          title={`Learn more about ${title}`}
         >
           Learn more
         </Link>
