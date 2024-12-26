@@ -64,4 +64,11 @@
     & + p { @apply mt-2; }
     & + h2 { @apply mt-20; }
   }
+
+  blockquote {
+    @apply border-l-2 border-l-sand-6 dark:border-l-sand-dark-6 pl-4 mb-8;
+
+    p { @apply indent-0; }
+    em { @apply block mt-2; }
+  }
 }

@@ -2,8 +2,6 @@ import { allThoughts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 import { Mdx } from 'components/mdx'
 
-import styles from '../../../styles/views/thought.module.css'
-
 export const generateStaticParams = async () => allThoughts.map((thought) => ({ slug: thought.slug }))
 
 export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -18,20 +16,20 @@ const ThoughtLayout = async ({ params }: { params: Promise<{ slug: string }> }) 
 
   if (thought) {
     return (<>
-      <header className={styles.header}>
+      <header className='col-span-full md:col-span-12 lg:col-span-8 mb-24'>
         <div className='flex flex-row gap-2'>
-          <h1 className={styles.title}>{thought.title}</h1>
+          <h1>{thought.title}</h1>
         </div>
-        <time className={styles.date} dateTime={thought.date}>
+        <time dateTime={thought.date}>
           {format(parseISO(thought.date), 'eee · LLLL d, yyyy')}
         </time>
 
         {thought.credits && (
-          <p className={styles.credits}>Image credits <a href={thought.credits.url || ''} target="_blank">{thought.credits.name}</a></p>
+          <p className='mt-4'>Image credits <a href={thought.credits.url || ''} target="_blank">{thought.credits.name}</a></p>
         )}
       </header>
 
-      <article className={styles.content}>
+      <article className='col-span-full lg:col-start-9 lg:col-span-6 [&_p+p]:indent-16 [&_p+p]:mt-0'>
         <Mdx code={thought.body.code} />
       </article>
     </>)
