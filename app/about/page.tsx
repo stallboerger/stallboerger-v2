@@ -58,19 +58,19 @@ const images: {
 }[] = [
 	{
 		src: '/images/about/anton-1.jpeg',
-		alt: 'Anton Stallbörger'
+		alt: 'Anton standing in front of a concrete wall'
 	},
 	{
 		src: '/images/about/anton-hamburg-shoes.jpeg',
-		alt: 'Anton Stallbörger'
+		alt: 'A persons shoe under a desk'
 	},
 	{
 		src: '/images/about/anton-close-up-black-and-white.jpg',
-		alt: 'Anton Stallbörger'
+		alt: 'A black and white close up of Anton'
 	},
 	{
 		src: '/images/about/anton-flims-gelbes-haus.jpeg',
-		alt: 'Anton Stallbörger'
+		alt: 'Anton looking at a object in a white room'
 	}
 ]
 
