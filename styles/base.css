@@ -37,7 +37,7 @@
   }
   
   a {
-    @apply text-sand-12 dark:text-sand-dark-12 underline underline-offset-2 decoration-[1px] decoration-sand-8 dark:decoration-sand-dark-8 hover:decoration-sand-12 dark:hover:decoration-sand-dark-12;
+    @apply text-sand-12 dark:text-sand-dark-12 underline underline-offset-2 decoration-[1px] decoration-sand-8 dark:decoration-sand-dark-8 hover:decoration-sand-12 dark:hover:decoration-sand-dark-12 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-none ring-[#008CFF] ring-offset-sand-1 dark:ring-offset-sand-dark-1;
     transition: all .2s ease-out;
   }
     
