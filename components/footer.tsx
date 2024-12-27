@@ -1,54 +1,52 @@
 'use client';
 
 import Link from 'next/link';
+import { CSSProperties } from 'react';
 
 export default function Footer() {
+  const socials: {
+    name: string
+    url: string
+    color?: string
+  }[] = [
+    {
+      name: 'Email',
+      url: 'mailto:anton@stallboerger.de'
+    },
+    {
+      name: 'X.com',
+      url: 'http://x.com/stallboerger',
+      color: '#1D9BF0'
+    },
+    {
+      name: 'Cosmos.so',
+      url: 'http://cosmos.so/stallboerger',
+      color: '#75A54F'
+    },
+    {
+      name: 'Read.cv',
+      url: 'http://read.cv/stallboerger',
+      color: '#F2A93C'
+    }
+  ]
+
   return (
     <footer className="col-span-full mt-40 grid-cols-8 sm:grid-cols-16 grid gap-6 md:gap-8 px-4 md:px-8 mb-8">
       <section className="grid grid-cols-8 gap-y-12 gap-6 col-span-full lg:col-span-8 row-start-2 lg:row-auto self-start border-t border-sand-6 dark:border-sand-dark-6 pt-6 md:pt-8">
         <div className="col-span-2 flex flex-col gap-2">
           <h2 className="mb-4">Connect</h2>
           <ul className="gap-2">
-            <li>
-              <a 
-                href="mailto:anton@stallboerger.de" 
-                className="self-start"
-                target="_blank" 
-                rel="noreferrer"
-              >
-                Mail
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://x.com/stallboerger" 
-                className="self-start hover:!text-[#1D9BF0]"
-                target="_blank" 
-                rel="noreferrer"
-              >
-                X.com
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://cosmos.so/stallboerger" 
-                className="self-start"
-                target="_blank" 
-                rel="noreferrer"
-              >
-                Cosmos.so
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://read.cv/stallboerger" 
-                className="self-start hover:!text-[#F2A93C]"
-                target="_blank" 
-                rel="noreferrer"
-              >
-                Read.cv
-              </a>
-            </li>
+            {socials.map((social, key) => (
+              <li key={key}>
+                <a 
+                  href={social.url}
+                  className='self-start hover:!text-[--color] hover:!decoration-[--color]'
+                  target='_blank'
+                  rel='noreferrer'
+                  style={{ '--color': social.color ?? false } as CSSProperties }
+                >{social.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
