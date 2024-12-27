@@ -52,41 +52,43 @@ const experiences: Experience[] = [
 	}
 ]
 
+const images: {
+	src: string
+	alt: string
+}[] = [
+	{
+		src: '/images/about/anton-1.jpeg',
+		alt: 'Anton Stallbörger'
+	},
+	{
+		src: '/images/about/anton-hamburg-shoes.jpeg',
+		alt: 'Anton Stallbörger'
+	},
+	{
+		src: '/images/about/anton-close-up-black-and-white.jpg',
+		alt: 'Anton Stallbörger'
+	},
+	{
+		src: '/images/about/anton-flims-gelbes-haus.jpeg',
+		alt: 'Anton Stallbörger'
+	}
+]
+
 export default function AboutPage() {
 	return (
 	<>
-		<figure className="sm:mt-[calc(-180px_+_53px+32px)] col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2 mt-[calc(-140px_+_53px_+_16px)]">
-			<Image 
-				src={`/images/about/anton-1.jpeg`}
-				alt={`Anton Stallbörger`}
-				width="1920" 
-				height="305"
-				className="w-full h-full object-cover" />
-		</figure>
-		<figure className="sm:mt-[calc(-180px_+_53px+32px)] col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2 mt-[calc(-140px_+_53px_+_16px)]">
-			<Image 
-				src={`/images/about/anton-hamburg-shoes.jpeg`}
-				alt={`Anton Stallbörger`}
-				width="1920" 
-				height="305"
-				className="w-full h-full object-cover" />
-		</figure>
-		<figure className="sm:mt-[calc(-180px_+_53px+32px)] col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2">
-			<Image 
-				src={`/images/about/anton-close-up-black-and-white.jpg`}
-				alt={`Anton Stallbörger`}
-				width="1920" 
-				height="305"
-				className="w-full h-full object-cover" />
-		</figure>
-		<figure className="sm:mt-[calc(-180px_+_53px+32px)] col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2">
-			<Image 
-				src={`/images/about/anton-flims-gelbes-haus.jpeg`}
-				alt={`Anton Stallbörger`}
-				width="1920" 
-				height="305"
-				className="w-full h-full object-cover" />
-		</figure>
+		<div className='col-span-full grid grid-cols-subgrid gap-4 lg:gap-8'>
+			{images.map((image, key) => (
+				<figure className="col-span-4 sm:col-span-8 md:col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2 h-full w-full overflow-hidden" key={key}>
+					<Image 
+						src={image.src}
+						alt={image.alt}
+						width={1920}
+						height={305}
+						className="w-full h-full object-cover" />
+				</figure>
+			))}
+		</div>
 
 		<header className="col-span-full md:col-span-12 lg:col-span-8 lg:sticky lg:top-8 lg:self-start mb-20 lg:mb-0">
 			<h1>About Anton</h1>
