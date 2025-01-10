@@ -22,7 +22,7 @@ export default function Home() {
           Driven by curiosity and a love for great, high-quality and thoughtful design. Striving to create something truly unique and meaningful.
           <br />
           <br />
-          Currently building icons for <a href='https://icons.saman.design' target="_blank" className='underline'>Saman Icons</a>, exploring different <Link href="/playground" className='underline'>side projects</Link> and studying at <a href='https://hfg-gmuend.de/en' target="_blank"  className='underline'>HfG Schwäbisch Gmünd</a>.
+          Currently working on my first SwiftUI app while also creating icons for <a href='https://icons.saman.design' target="_blank" className='underline'>Saman Icons</a>, as always.
         </p>
       </section>
 
