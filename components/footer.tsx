@@ -24,7 +24,7 @@ export default function Footer() {
       color: '#75A54F'
     },
     {
-      name: 'Read.cv',
+      name: 'Read.cv (RIP)',
       url: 'http://read.cv/stallboerger',
       color: '#F2A93C'
     }
