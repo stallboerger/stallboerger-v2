@@ -82,7 +82,7 @@ export default async function LiteralBooks({ customClass }: Props) {
             </figure>
       
             <div className='flex flex-col'>
-              <span className='text-sand-12 dark:text-sand-dark-12 text-balance underline underline-offset-2 decoration-[1px] decoration-sand-8 dark:decoration-sand-dark-8 hover:decoration-sand-12 dark:hover:decoration-sand-dark-12 font-semibold'>{book.title}</span>
+              <span className='text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-[1px] decoration-neutral-500 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 font-semibold'>{book.title}</span>
               <span className=''>{book.authors.map(author => author.name).join(', ')}</span>
             </div>
           </a>
