@@ -19,7 +19,7 @@ const Card: React.FC<Props> = ({
 	link,
 }) => {
   return (
-    <div className="mb-12 lg:mb-24 border-b border-sand-6 dark:border-sand-dark-6 last:border-transparent last:mb-0">
+    <div className="mb-12 lg:mb-24 border-b border-neutral-200 dark:border-neutral-800 last:border-transparent last:mb-0">
       <div className="flex flex-col mb-8">
         <h3>{title}</h3>
         <time>{year}</time>
@@ -27,7 +27,7 @@ const Card: React.FC<Props> = ({
     
       <Link 
         href={link}
-        className="block bg-white dark:bg-black shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] mb-8 ring-[#008CFF] ring-offset-2 focus-visible:ring-2"
+        className="block bg-white dark:bg-black mb-8 ring-1 ring-neutral-200 dark:ring-neutral-800 focus:ring-blue-500 focus:ring-offset-2 focus-visible:ring-2"
       >
         <Image
           src={imageSrc}

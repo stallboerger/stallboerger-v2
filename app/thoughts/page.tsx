@@ -6,8 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-	title: 'Thoughts',
-	description: 'Digital Product Designer and Developer.',
+	title: 'Thoughts'
 };
 
 const thoughts = allThoughts.sort((a, b) =>
@@ -27,7 +26,7 @@ export default function ThoughtsPage() {
 			<Link
 				id={post.slug}
 				key={key}
-				className='col-span-full md:col-span-8 lg:col-span-4 text-sand-12 dark:text-sand-dark-12 mb-6 md:mb-0 first-of-type:md:col-span-8 no-underline group'
+				className='col-span-full md:col-span-8 lg:col-span-4 text-sand-12 dark:text-sand-dark-12 mb-6 md:mb-0 md:first-of-type:col-span-8 no-underline group'
 				href={`/thoughts/${post.slug}`}
 			>
 				<Image 
@@ -36,8 +35,8 @@ export default function ThoughtsPage() {
 					width="593" 
 					height="305"
 					className='mb-2 w-full shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] overflow-hidden' />
-				<h3 className='font-bold underline underline-offset-2 decoration-[1px] decoration-sand-8 dark:decoration-sand-dark-8 hover:decoration-sand-12 dark:hover:decoration-sand-dark-12'>{post.title}</h3>
-				<time className='block md:opacity-0 md:translate-y-[2px] md:duration-200 md:ease-in-out group-hover:md:translate-y-0 group-hover:md:opacity-100'>{format(parseISO(post.date), 'LLLL d, yyyy')}</time>
+				<h3 className='font-bold underline underline-offset-2 decoration-[1px] decoration-neutral-500 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-hidden ring-blue-500 ring-offset-neutral-50 dark:ring-offset-neutral-950'>{post.title}</h3>
+				<time className='block md:opacity-0 md:translate-y-[2px] md:duration-200 md:ease-in-out md:group-hover:translate-y-0 md:group-hover:opacity-100'>{format(parseISO(post.date), 'LLLL d, yyyy')}</time>
 			</Link>
 		))}
 	</>)

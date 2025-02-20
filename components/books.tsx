@@ -78,7 +78,7 @@ export default async function LiteralBooks({ customClass }: Props) {
         <li className='col-span-1' key={book.slug}>
           <a href={`https://literal.club/stallboerger/book/${book.slug}`} target='_blank' className='flex gap-4 no-underline'>
             <figure className='w-9 shrink-0 relative overflow-hidden'>
-              <Image src={book.cover} alt={`Cover of ${book.title}`} fill className='!relative w-full !h-auto object-cover' />
+              <Image src={book.cover} alt={`Cover of ${book.title}`} fill className='relative! w-full h-auto! object-cover' />
             </figure>
       
             <div className='flex flex-col'>

@@ -51,20 +51,20 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='grid-cols-16 grid gap-4 lg:gap-8 justify-between items-center w-full h-[53px] z-50 px-4 lg:px-8 bg-sand-1 dark:bg-sand-dark-1 select-none'>
+    <nav className='grid-cols-16 grid gap-4 lg:gap-8 justify-between items-center w-full h-[53px] z-50 px-4 lg:px-8 bg-neutral-50 dark:bg-neutral-950 select-none'>
       <Link href='/' className={clsx(
         'col-span-3 justify-self-start',
-        'text-sand-11 dark:text-sand-dark-11 no-underline',
-        currentRoute === '/' && 'text-sand-12 dark:text-sand-dark-12',
+        'text-neutral-600 dark:text-neutral-400 no-underline',
+        currentRoute === '/' && 'text-neutral-950 dark:text-neutral-50',
       )}>
         Home
       </Link>
 
-      <div className='flex gap-3 md:gap-6 md:col-span-5 col-start-[16] justify-self-end md:justify-self-start md:col-start-9'>
+      <div className='flex gap-3 md:gap-6 md:col-span-5 col-start-16 justify-self-end md:justify-self-start md:col-start-9'>
         {items.map((item) => (
           <Link key={item.title} href={item.href} className={clsx(
-            'text-sand-11 dark:text-sand-dark-11 no-underline',
-            currentRoute === item.href && 'text-sand-12 dark:text-sand-dark-12',
+            'text-neutral-600 dark:text-neutral-400 no-underline',
+            currentRoute === item.href && 'text-neutral-950 dark:text-neutral-50',
           )}>{item.title}</Link>
         ))}
       </div>

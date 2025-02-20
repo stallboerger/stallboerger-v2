@@ -22,7 +22,7 @@ export default function Home() {
           Driven by curiosity and a love for great, high-quality and thoughtful design. Striving to create something truly unique and meaningful.
           <br />
           <br />
-          Currently working on my first SwiftUI app while also creating icons for <a href='https://icons.saman.design' target="_blank" className='underline'>Saman Icons</a>, as always.
+          Just finished my <Link href='/projects/herzenssache' target="">bachelor thesis</Link> and built my first SwiftUI app.
         </p>
       </section>
 

@@ -73,7 +73,7 @@ export default function RootLayout({
 			className={soehne.className}
 		>
 			<PlausibleProvider domain="antonstallboerger.com">
-				<body className="antialiased text-sand-12 dark:text-sand-dark-12 bg-sand-1 dark:bg-sand-dark-1 text-[14px] selection:bg-[#D8ECFC] selection:text-[#008CFF] dark:selection:bg-[#0E1E35] min-h-full flex flex-col">
+				<body className="min-h-full flex flex-col">
 					<Navbar />
 					
 					<main id='swup' className="transition-fade pt-12 md:pt-20 h-auto px-4 mb-auto lg:px-8 grid grid-cols-8 sm:grid-cols-16 gap-4 lg:gap-8">

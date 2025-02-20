@@ -1,10 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --default-font-family: 'soehne';
+}
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-neutral-200, currentColor);
+  }
+
   * {
     -webkit-tap-highlight-color: transparent;
+    @apply antialiased;
   }
     
   html {
@@ -19,9 +30,14 @@
       opacity: 0;
     }
   }
+
+  html, body {
+    @apply text-neutral-950 dark:text-neutral-50 bg-neutral-50 dark:bg-neutral-950 selection:bg-blue-100 selection:text-blue-500 dark:selection:bg-blue-900;
+  }
     
   body {
     font-feature-settings: 'case', 'calt';
+    @apply text-sm
   }
   
   img {
@@ -37,7 +53,7 @@
   }
   
   a {
-    @apply text-sand-12 dark:text-sand-dark-12 underline underline-offset-2 decoration-[1px] decoration-sand-8 dark:decoration-sand-dark-8 hover:decoration-sand-12 dark:hover:decoration-sand-dark-12 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-none ring-[#008CFF] ring-offset-sand-1 dark:ring-offset-sand-dark-1;
+    @apply text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-[1px] decoration-neutral-500 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-hidden ring-blue-500 ring-offset-neutral-50 dark:ring-offset-neutral-950;
     transition: all .2s ease-out;
   }
     
@@ -66,7 +82,7 @@
   }
 
   blockquote {
-    @apply border-l-2 border-l-sand-6 dark:border-l-sand-dark-6 pl-4 mb-8;
+    @apply border-l-2 border-l-neutral-200 dark:border-l-neutral-800 pl-4 mb-8;
 
     p { @apply indent-0; }
     em { @apply block mt-2; }

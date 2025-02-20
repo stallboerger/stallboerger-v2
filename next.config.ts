@@ -13,7 +13,10 @@ const nextConfig: NextConfig = {
 			{
 				protocol: "https",
 				hostname: "**",
-			}
+			},
+      {
+        hostname: 'books.google.com'
+      }
     ]
   },
   async redirects() {

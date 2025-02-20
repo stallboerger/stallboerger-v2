@@ -10,8 +10,8 @@ export default function Footer() {
     color?: string
   }[] = [
     {
-      name: 'Email',
-      url: 'mailto:anton@stallboerger.de'
+      name: 'E-mail',
+      url: 'mailto:anton@stallboerger.com'
     },
     {
       name: 'X.com',
@@ -32,7 +32,7 @@ export default function Footer() {
 
   return (
     <footer className="col-span-full mt-40 grid-cols-8 sm:grid-cols-16 grid gap-6 md:gap-8 px-4 md:px-8 mb-8">
-      <section className="grid grid-cols-8 gap-y-12 gap-6 col-span-full lg:col-span-8 row-start-2 lg:row-auto self-start border-t border-sand-6 dark:border-sand-dark-6 pt-6 md:pt-8">
+      <section className="grid grid-cols-8 gap-y-12 gap-6 col-span-full lg:col-span-8 row-start-2 lg:row-auto self-start border-t border-neutral-200 dark:border-neutral-800 pt-6 md:pt-8">
         <div className="col-span-2 flex flex-col gap-2">
           <h2 className="mb-4">Connect</h2>
           <ul className="gap-2">
@@ -40,7 +40,7 @@ export default function Footer() {
               <li key={key}>
                 <a 
                   href={social.url}
-                  className='self-start hover:!text-[--color] hover:!decoration-[--color]'
+                  className='self-start hover:text-(--color)! hover:decoration-(--color)!'
                   target='_blank'
                   rel='noreferrer'
                   style={{ '--color': social.color ?? false } as CSSProperties }
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="@apply col-span-full lg:col-start-9 lg:col-span-8 row-start-1 lg:row-auto lg:border-t border-sand-6 dark:border-sand-dark-6"> 
+      <section className="@apply col-span-full lg:col-start-9 lg:col-span-8 row-start-1 lg:row-auto lg:border-t border-neutral-200 dark:border-neutral-800"> 
       </section>
     </footer>
   );

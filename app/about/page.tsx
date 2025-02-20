@@ -17,6 +17,24 @@ interface Experience {
 	url?: string;
 }
 
+interface Education {
+	school: string;
+	degree: string;
+	start: Date;
+	end?: Date;
+	url?: string;
+}
+
+const education: Education[] = [
+	{
+		school: 'Hochschule für Gestaltung Schwäbisch Gmünd',
+		degree: 'Bachelor of Arts',
+		url: 'https://hfg-gmuend.de',
+		start: new Date('2021-10-01'),
+		end: new Date('2025-02-15'),
+	}
+]
+
 const experiences: Experience[] = [
 	{
 		company: 'Saman Collective',
@@ -28,7 +46,7 @@ const experiences: Experience[] = [
 		company: 'Freelance',
 		start: new Date('2023-06-15'),
 		description: 'Available for projects.',
-		url: 'mailto:hi@antonstallboerger.com'
+		url: 'mailto:anton@stallboerger.com'
 	},
 	{
 		company: 'Essentry',
@@ -79,7 +97,7 @@ export default function AboutPage() {
 	<>
 		<div className='col-span-full grid grid-cols-subgrid gap-4 lg:gap-8'>
 			{images.map((image, key) => (
-				<figure className="col-span-4 sm:col-span-8 md:col-span-4 aspect-[4_/_5] bg-sand-2 dark:bg-sand-dark-2 h-full w-full overflow-hidden" key={key}>
+				<figure className="col-span-4 sm:col-span-8 md:col-span-4 aspect-[4_/_5] bg-neutral-100 dark:bg-neutral-900 h-full w-full overflow-hidden" key={key}>
 					<Image 
 						src={image.src}
 						alt={image.alt}
@@ -104,7 +122,7 @@ export default function AboutPage() {
 			</p>
 		</section>
 
-		<section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-sand-6 dark:border-t-sand-dark-6 pt-8 lg:col-start-9">
+		<section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 lg:col-start-9">
 			<h2>Things I like</h2>
 			<ul>
 				<li><a href='https://www.cosmos.so/stallboerger/goods' target='_blank' rel="noreferrer">Quality goods</a></li>
@@ -117,7 +135,7 @@ export default function AboutPage() {
 				<li><a href='https://www.cosmos.so/stallboerger/concrete' target='_blank' rel="noreferrer">Concrete</a></li>
 			</ul>
 		</section>
-		<section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-sand-6 dark:border-t-sand-dark-6 pt-8">
+		<section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8">
 			<h2>Things I don’t like</h2>
 			<ul>
 				<li>Smalltalk</li>
@@ -128,17 +146,17 @@ export default function AboutPage() {
 			</ul>
 		</section>
 
-		<section className='col-span-full grid grid-cols-subgrid lg:col-span-8 lg:col-start-9 border-t border-t-sand-6 dark:border-t-sand-dark-6 pt-8 mt-20'>
+		<section className='col-span-full grid grid-cols-subgrid lg:col-span-8 lg:col-start-9 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 mt-20'>
 			<h2 className='col-span-8 md:col-span-8'>Currently reading</h2>
 
 			<LiteralBooks customClass='col-span-8' />
 		</section>
 
-		<section className='col-span-full lg:col-span-12 lg:col-start-5 border-t border-t-sand-6 dark:border-t-sand-dark-6 pt-8 mt-20 grid grid-cols-16 lg:grid-cols-12 gap-4 md:gap-8 md:gap-y-8'>
+		<section className='col-span-full lg:col-span-12 lg:col-start-5 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 mt-20 grid grid-cols-16 lg:grid-cols-12 gap-4 md:gap-8 md:gap-y-8'>
 			<h2 className='col-span-8 lg:col-span-4'>Experience</h2>
 
 			{experiences.map((experience, key) => (
-				<div className='col-span-full md:col-span-8 md:col-start-9 lg:col-start-5 grid grid-cols-8 gap-4 not-last:border-b not-last:border-sand-6 not-last:dark:border-sand-dark-6 not-last:pb-12 not-last:md:pb-20' key={key}>
+				<div className='col-span-full md:col-span-8 md:col-start-9 lg:col-start-5 grid grid-cols-8 gap-4 not-last:border-b not-last:border-neutral-200 dark:not-last:border-neutral-800 not-last:pb-12 md:not-last:pb-20' key={key}>
 					<div className='col-span-full'>
 						<h3 className='col-span-4 font-semibold'>
 							{
@@ -162,6 +180,35 @@ export default function AboutPage() {
 			))}
 
 		</section>
+
+		<section className='col-span-full lg:col-span-12 lg:col-start-5 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 mt-20 grid grid-cols-16 lg:grid-cols-12 gap-4 md:gap-8 md:gap-y-8'>
+					<h2 className='col-span-8 lg:col-span-4'>Education</h2>
+		
+					{education.map((education, key) => (
+						<div className='col-span-full md:col-span-8 md:col-start-9 lg:col-start-5 grid grid-cols-8 gap-4 not-last:border-b not-last:border-neutral-200 dark:not-last:border-neutral-800 not-last:pb-12 md:not-last:pb-20' key={key}>
+							<div className='col-span-full'>
+								<h3 className='col-span-4 font-semibold'>
+									{
+										education.url
+										? <a href={`${education.url}`} target='_blank'>{education.degree && `${education.degree} at`} {education.school}</a>
+										: <>{education.degree && `${education.degree} at`} {education.school}</>
+									}
+									
+								</h3>
+								<span className='block'>
+									{
+										(education.end && isAfter(education.end, new Date())) || !education.end
+										? `${format(education.start, 'LLLL, yyyy')} – Ongoing`
+										: `${format(education.start, 'LLLL, yyyy')} – ${format(education.end, 'LLLL, yyyy')}`
+									}
+								</span>
+							</div>
+		
+							{/* {education.description && <p className='mt-4 col-span-full sm:col-span-6 max-w-none'>{education.description}</p>} */}
+						</div>
+					))}
+		
+				</section>
 	</>
 	);
 }

@@ -12,11 +12,11 @@
   "dependencies": {
     "@swup/head-plugin": "^2.2.0",
     "@swup/scroll-plugin": "^3.3.2",
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "22.0.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@vercel/speed-insights": "^1.0.12",
-    "autoprefixer": "10.4.19",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "eslint": "9.8.0",
@@ -27,7 +27,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "swup": "^4.7.0",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^4.0.0"
   },
   "description": "",
   "main": "next.config.js",
