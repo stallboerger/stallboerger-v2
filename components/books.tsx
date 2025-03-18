@@ -76,13 +76,13 @@ export default async function LiteralBooks({ customClass }: Props) {
     <ul className={`grid lg:grid-cols-2 gap-3 ${customClass}`}>
       {books?.map((book: Book) => (
         <li className='col-span-1' key={book.slug}>
-          <a href={`https://literal.club/stallboerger/book/${book.slug}`} target='_blank' className='flex gap-4 no-underline'>
+          <a href={`https://literal.club/stallboerger/book/${book.slug}`} target='_blank' className='flex gap-4 no-underline group'>
             <figure className='w-9 shrink-0 relative overflow-hidden'>
               <Image src={book.cover} alt={`Cover of ${book.title}`} fill className='relative! w-full h-auto! object-cover' />
             </figure>
       
             <div className='flex flex-col'>
-              <span className='text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-[1px] decoration-neutral-500 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 font-semibold'>{book.title}</span>
+              <span className='text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-[1px] decoration-neutral-500 group-hover:decoration-neutral-950 dark:group-hover:decoration-neutral-50 font-semibold'>{book.title}</span>
               <span className=''>{book.authors.map(author => author.name).join(', ')}</span>
             </div>
           </a>

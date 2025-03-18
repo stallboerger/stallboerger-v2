@@ -1,9 +1,8 @@
-import '/styles/base.css'
+import './base.css'
 import Soehne from 'next/font/local'
 import type { Metadata } from 'next'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import PlausibleProvider from 'next-plausible'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const soehne = Soehne({
@@ -72,18 +71,16 @@ export default function RootLayout({
 			lang="en"
 			className={soehne.className}
 		>
-			<PlausibleProvider domain="antonstallboerger.com">
-				<body className="min-h-full flex flex-col">
-					<Navbar />
-					
-					<main id='swup' className="transition-fade pt-12 md:pt-20 h-auto px-4 mb-auto lg:px-8 grid grid-cols-8 sm:grid-cols-16 gap-4 lg:gap-8">
-						{children}
-					</main>
+			<body className="min-h-full flex flex-col">
+				<Navbar />
+				
+				<main id='swup' className="transition-fade pt-12 md:pt-20 h-auto px-4 mb-auto lg:px-8 grid grid-cols-8 sm:grid-cols-16 gap-4 lg:gap-8">
+					{children}
+				</main>
 
-					<Footer />
-					<SpeedInsights/>
-				</body>
-			</PlausibleProvider>
+				<Footer />
+				<SpeedInsights/>
+			</body>
 		</html>
 	)
 }
