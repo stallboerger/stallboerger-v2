@@ -57,7 +57,7 @@
   }
   
   a {
-    @apply text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-2 decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-hidden ring-blue-500 ring-offset-neutral-50 dark:ring-offset-neutral-950;
+    @apply text-neutral-950 dark:text-neutral-50 underline underline-offset-2 decoration-[1.5px] decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-hidden ring-blue-500 ring-offset-neutral-50 dark:ring-offset-neutral-950;
     transition: all .2s ease-out;
   }
     
