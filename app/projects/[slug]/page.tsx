@@ -23,7 +23,7 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
         <time dateTime={project?.year} >
           {format(parseISO(project.year), 'yyyy')}
         </time>
-        <p className='mt-4'>{project?.description}</p>
+        <p className='mt-4 text-balance'>{project?.description}</p>
       </header>
 
       <aside className='col-span-full md:col-span-8 lg:col-span-4 mb-20'>

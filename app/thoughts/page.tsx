@@ -34,7 +34,7 @@ export default function ThoughtsPage() {
 					alt={post.title}
 					width="593" 
 					height="305"
-					className='mb-2 w-full shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] overflow-hidden' />
+					className='mb-2 w-full shadow-[0_0_0_1px_rgba(0,0,0,0.08)]  dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] overflow-hidden' />
 				<h3 className='font-bold underline underline-offset-2 decoration-[1.5px] decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-neutral-950 dark:hover:decoration-neutral-50 focus:ring-2 focus:ring-offset-2 focus:rounded-none outline-hidden ring-blue-500 ring-offset-neutral-50 dark:ring-offset-neutral-950'>{post.title}</h3>
 				<time className='block md:opacity-0 md:translate-y-[2px] md:duration-200 md:ease-in-out md:group-hover:translate-y-0 md:group-hover:opacity-100'>{format(parseISO(post.date), 'LLLL d, yyyy')}</time>
 			</Link>
