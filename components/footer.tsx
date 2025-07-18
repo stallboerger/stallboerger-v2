@@ -22,11 +22,6 @@ export default function Footer() {
       name: 'Cosmos.so',
       url: 'http://cosmos.so/stallboerger',
       color: '#75A54F'
-    },
-    {
-      name: 'Read.cv (RIP)',
-      url: 'http://read.cv/stallboerger',
-      color: '#F2A93C'
     }
   ]
 
