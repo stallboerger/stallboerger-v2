@@ -3,37 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Swup from 'swup'
-import SwupHeadPlugin from '@swup/head-plugin'
-import SwupScrollPlugin from '@swup/scroll-plugin'
-
 import clsx from 'clsx'
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 export default function Navbar() {
-  const [currentRoute, setCurrentRoute] = useState<any | null>(usePathname())
-
-  useEffect(() => {
-    const swup = new Swup({
-      plugins: [
-        new SwupHeadPlugin({ 
-          persistAssets: true, 
-          awaitAssets: true 
-        }),
-        new SwupScrollPlugin({
-          animateScroll: {
-            betweenPages: false,
-            samePageWithHash: false,
-            samePage: false
-          }					 
-        })
-      ]
-    });
-
-    swup.hooks.on('page:view', (visit) => {
-      setCurrentRoute(visit.to.url)
-    })
-  }, [])
+  const pathname = usePathname()
+  const currentRoute = useMemo(() => pathname ?? '/', [pathname])
 
   const items = [
     {

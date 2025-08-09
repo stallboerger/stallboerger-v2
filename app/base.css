@@ -21,14 +21,25 @@
     
   html {
     height: 100%;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   
     &.is-changing .transition-fade {
-      transition: opacity 0.2s;
+      transition: opacity 160ms var(--ease-standard), transform 200ms var(--ease-standard);
       opacity: 1;
+      transform: none;
+      will-change: opacity, transform;
     }
     
     &.is-animating .transition-fade {
       opacity: 0;
+      transform: translateY(4px) scale(0.995);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .transition-fade {
+      transition: none !important;
+      transform: none !important;
     }
   }
 

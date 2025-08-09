@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { format, isAfter } from 'date-fns';
+import { Suspense } from 'react'
 import LiteralBooks from '@/components/books';
 
 export const metadata: Metadata = {
@@ -147,9 +148,11 @@ export default function AboutPage() {
 		</section>
 
 		<section className='col-span-full grid grid-cols-subgrid lg:col-span-8 lg:col-start-9 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 mt-20'>
-			<h2 className='col-span-8 md:col-span-8'>Currently reading</h2>
+      <h2 className='col-span-8 md:col-span-8'>Currently reading</h2>
 
-			<LiteralBooks customClass='col-span-8' />
+      <Suspense fallback={<ul className='col-span-8 grid lg:grid-cols-2 gap-3'><li className='col-span-full text-sm text-neutral-500 dark:text-neutral-400'>Loading…</li></ul>}>
+        <LiteralBooks customClass='col-span-8' />
+      </Suspense>
 		</section>
 
 		<section className='col-span-full lg:col-span-12 lg:col-start-5 border-t border-t-neutral-200 dark:border-t-neutral-800 pt-8 mt-20 grid grid-cols-16 lg:grid-cols-12 gap-4 md:gap-8 md:gap-y-8'>

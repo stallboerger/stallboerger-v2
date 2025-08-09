@@ -3,6 +3,7 @@ import Soehne from 'next/font/local'
 import type { Metadata } from 'next'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
+import PageTransition from '../components/page-transition'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const soehne = Soehne({
@@ -26,6 +27,7 @@ const soehne = Soehne({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://stallboerger.com'),
 	title: {
 		default: 'Anton Stallbörger',
 		template: '%s · Anton Stallbörger',
@@ -72,6 +74,7 @@ export default function RootLayout({
 			className={soehne.className}
 		>
 			<body className="min-h-full flex flex-col">
+				<PageTransition />
 				<Navbar />
 				
 				<main id='swup' className="transition-fade pt-12 md:pt-20 h-auto px-4 mb-auto lg:px-8 grid grid-cols-8 sm:grid-cols-16 gap-4 lg:gap-8">

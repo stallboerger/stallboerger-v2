@@ -27,7 +27,7 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
       </header>
 
       <aside className='col-span-full md:col-span-8 lg:col-span-4 mb-20'>
-        {project.links && 
+        {project.links &&
           <div className='mb-8'>
             <h2 className='mb-0'>Visit live</h2>
             {project.links.map((url, key) => (
@@ -45,18 +45,18 @@ export default async function ProjectLayout({params}: { params: Promise<{ slug: 
           <div className='flex flex-col gap-2 mt-2'>
             <h2 className='mb-1'>Collaborators</h2>
             {project.collaborators?.map((collaborator, key) => (
-              <Link 
+              <Link
                 href={collaborator.url}
                 target="_blank"
                 className='flex gap-2'
                 key={key}
               >
-                <Image 
-                  src={collaborator.avatar} 
+                <Image
+                  src={collaborator.avatar}
                   alt={collaborator.name}
                   width={240}
                   height={240}
-                  className='w-6 h-6 rounded-full shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)]' 
+                  className='w-6 h-6 rounded-full border border-neutral-black/10'
                 />
                 {collaborator.name}
               </Link>

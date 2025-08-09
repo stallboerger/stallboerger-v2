@@ -20,9 +20,6 @@ export default function Home() {
         </p>
         <p>
           Driven by curiosity and a love for great, high-quality and thoughtful design. Striving to create something truly unique and meaningful.
-          <br />
-          <br />
-          Just finished my <Link href='/projects/herzenssache' target="">bachelor thesis</Link> and built my first SwiftUI app.
         </p>
       </section>
 
