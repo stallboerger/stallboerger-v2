@@ -20,10 +20,10 @@ export default function ColophonPage() {
 
         <h2>Tech stack</h2>
         <p>
-          Built with <a href='https://nextjs.org/' target="_blank" rel="noreferrer">Next.js</a> and <a href='https://tailwindcss.com/' target="_blank" rel="noreferrer">Tailwind CSS</a>. Hosted on <a href='https://vercel.com/home' target="_blank" rel="noreferrer">Vercel</a>. Privacy friendly analytics with <a href='https://plausible.io/' target="_blank" rel="noreferrer">Plausible</a>.
+          Built with <a href='https://nextjs.org/' target="_blank" rel="noreferrer">Next.js</a> and <a href='https://tailwindcss.com/' target="_blank" rel="noreferrer">Tailwind CSS v4</a>. Hosted on <a href='https://vercel.com/home' target="_blank" rel="noreferrer">Vercel</a>.
         </p>    
         <p>
-          <a href="https://github.com/antonstallboerger/antonstallboerger-v2" target="_blank" rel="noreferrer">GitHub Repository</a>
+          <a href="https://github.com/stallboerger/stallboerger-v2" target="_blank" rel="noreferrer">GitHub Repository</a>
         </p>
           
         <h2>Photography</h2>
@@ -81,6 +81,15 @@ export default function ColophonPage() {
               rel="noreferrer"
             >
               thu-le.com
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://nelson.co/"  
+              target="_blank" 
+              rel="noreferrer"
+            >
+              nelson.co
             </a>
           </li>
         </ul>
