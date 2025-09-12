@@ -9,7 +9,7 @@ export default function ColophonPage() {
     <>
       <header className="col-span-full lg:col-span-8 md:col-span-12 lg:top-8 sticky lg:self-start mb-24">
         <h1>Colophon</h1>
-        <p>Last updated Dec 20, 2024</p>
+        <p>Last updated Sep 12, 2025</p>
       </header>
 
       <section className="col-span-full md:col-span-12 lg:col-span-6">
