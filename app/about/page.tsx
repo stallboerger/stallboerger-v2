@@ -38,12 +38,6 @@ const education: Education[] = [
 
 const experiences: Experience[] = [
 	{
-		company: 'Saman Collective',
-		description: 'The combined efforts of Linus Rogge and me, forming intuitive and reflective software and brands.',
-		url: 'https://saman.design',
-		start: new Date('2023-10-01')
-	},
-	{
 		company: 'Freelance',
 		start: new Date('2023-06-15'),
 		description: 'Available for projects.',
