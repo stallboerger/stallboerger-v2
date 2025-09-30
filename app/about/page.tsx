@@ -38,6 +38,12 @@ const education: Education[] = [
 
 const experiences: Experience[] = [
 	{
+		company: 'SPACING',
+		start: new Date('2025-10-01'),
+		description: 'Creating delightful software products and digital brands.',
+		url: 'https://spacing.co'
+	},
+	{
 		company: 'Freelance',
 		start: new Date('2023-06-15'),
 		description: 'Available for projects.',
