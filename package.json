@@ -10,7 +10,6 @@
     "build:content": "contentlayer2 build"
   },
   "dependencies": {
-    
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "22.0.0",
     "@types/react": "18.3.3",
@@ -20,11 +19,10 @@
     "date-fns": "^4.1.0",
     "eslint": "9.8.0",
     "eslint-config-next": "^15.0.3",
-    "next": "^15.1.0",
+    "next": "15.1.11",
     "postcss": "^8.4.40",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    
     "tailwindcss": "^4.0.0"
   },
   "description": "",
